@@ -1,12 +1,18 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}body {
+}
+
+body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f9;
     color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 
 h1 {
@@ -44,6 +50,8 @@ nav a:hover {
 
 nav ul {
     list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 nav li {
@@ -68,7 +76,8 @@ table {
 
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: 1px solid #ccc;
     text-align: center;
@@ -83,12 +92,12 @@ tbody tr:nth-child(even) {
     background-color: #f0f0f0;
 }
 
-main section{
+main section {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -96,13 +105,25 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* Deixando a logo de um lado e menu do outro. */
+    align-items: center;
+    /* Ambos centralizados verticalmente */
+    flex-wrap: wrap;
+    /* Em telas menores o menu qubra linha */
+
 }
 
-header .logo{
+header .logo {
     margin-bottom: 10px;
+    display: flex;
+    /* Flexbox dentro da logo para alinhar imagem e titulo */
+    align-items: center;
+    gap: 10px;
 }
 
-header .logo img{
+header .logo img {
     width: 60px;
     margin-right: 10px;
     vertical-align: middle;
@@ -114,4 +135,24 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Em telas estreitas, os cards quebram para novas linhas */
+    gap: 20px;
+}
+
+.evento-item {
+    flex: 1 1 250px;
+    /* Cresce em 1 | Encolhe em 1 | Tamanho 250px */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* O main cresce e ocupa todo espa.co que está sobrando, forçando o footer a ficar embaixo */
 }

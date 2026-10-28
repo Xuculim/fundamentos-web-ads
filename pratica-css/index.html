@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IngressosFácil</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <header>
@@ -26,7 +28,8 @@
     <main>
         <section id="home">
             <h2>Bem-vindo ao IngressosFácil</h2>
-            <p>Encontre os melhores eventos da sua cidade com poucos cliques. Consulte a <a href="#eventos">programação completa</a> abaixo.</p>
+            <p>Encontre os melhores eventos da sua cidade com poucos cliques. Consulte a <a href="#eventos">programação
+                    completa</a> abaixo.</p>
         </section>
 
         <section id="eventos">
@@ -75,8 +78,69 @@
 
         <section id="contato">
             <h2>Contato</h2>
-            <p>Dúvidas? Fale com a gente pelo e-mail <a href="mailto:contato@ingressosfacil.com">contato@ingressosfacil.com</a>.</p>
+            <p>Dúvidas? Fale com a gente pelo e-mail <a
+                    href="mailto:contato@ingressosfacil.com">contato@ingressosfacil.com</a>.</p>
         </section>
+
+        <section>
+            <video id="videoEvento" width="480" poster="poster_video.png" controls muted autoplay loop allowfullscreen>
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não superta este vídeo
+            </video>
+        </section>
+
+        <section>
+            <iframe src="https://maps.google.com/maps?q=UNIFRAN&z=16&output=embed" width="50%" height="300"
+                style="border:0;" loading="lazy" title="Localização: UNIFRAN">>
+            </iframe>
+        </section>
+
+        <section>
+            <canvas id="seloEvento" width="200" height="200"></canvas>
+            <svg width="120" height="120" viewBox="0 0 120 120">
+                <rect x="10" y="30" width="100" height="60" rx="10" fill="#2a6bf2" />
+                <circle cx="95" cy="30" r="15" fill="#f4d03f" />
+                <text x="60" y="65" text-anchor="middle" fill="white" font-size="14" font-family="Arial">INGRESSO</text>
+            </svg>
+            <script>
+                const canvas = document.getElementById('seloEvento');
+                const ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+                ctx.arc(100, 100, 90, 0, Math.PI * 2);
+                ctx.fillStyle = '#2c3e50';
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(100, 100, 90, 0, Math.PI * 2);
+                ctx.strokeStyle = '#f4d03f';
+                ctx.lineWidth = 6;
+                ctx.stroke();
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('VIP', 100, 108);
+            </script>
+        </section>
+
+        <section>
+            <div class="eventos-container">
+                <div class="evento-item">
+                    <h3>Show de Rock</h3>
+                    <p>25/09/2026, Arena Franca</p>
+                </div>
+                <div class="evento-item">
+                    <h3>Teatro: A Comédia da Vida</h3>
+                    <p>30/09/2026, Teatro Municipal</p>
+                </div>
+                <div class="evento-item">
+                    <h3>Festival Gastronômico</h3>
+                    <p>05/10/2026, Praça Central</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -84,4 +148,5 @@
     </footer>
 
 </body>
+
 </html>
